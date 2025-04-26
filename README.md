@@ -8,6 +8,7 @@ CrashSenseAI is a real-time accident detection system using Edge AI models.
 It detects crashes from videos or streams, raises sound alarms, saves accident frames, and instantly sends email notifications.
 
 ### 🛠 Built With
+- **Python 3.10.0**
 - **YOLOv8 (Ultralytics)** — Deep Learning Object Detection
 - **OpenCV** — Video processing
 - **PyTorch** — Neural Network backend
