@@ -144,6 +144,7 @@ def detect_accidents(video_path, status_label, start_button, accident_label, pro
 
                     accident_label.config(text="Accident Detected!")
 
+
                     play_alarm_sound()
 
                     if not email_sent:
