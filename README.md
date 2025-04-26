@@ -7,155 +7,136 @@
 CrashSenseAI is a real-time accident detection system using Edge AI models.  
 It detects crashes from videos or streams, raises sound alarms, saves accident frames, and instantly sends email notifications.
 
-**Built with:**
-- YOLOv8 (Ultralytics)
-- OpenCV
-- PyTorch
-- Tkinter + ttkbootstrap (modern dark-themed GUI)
-- Pygame for alarms
-- Automated email sending with attachments
+### 🛠 Built With
+- **YOLOv8 (Ultralytics)** — Deep Learning Object Detection
+- **OpenCV** — Video processing
+- **PyTorch** — Neural Network backend
+- **Tkinter + ttkbootstrap** — Clean Dark GUI
+- **Pygame** — Sound alarms
+- **Automated Email** — With crash frame attachments
 
 ---
 
 ## 🚀 Features
-- 🎯 Real-time accident detection from videos
-- 💾 Auto-save accident frames to organized folders
-- 📩 Automatic email alerts with attached crash images
-- 🔊 Sound alarm on accident detection (Mute/Unmute support)
-- 🎥 Original video playback speed (no artificial slowdowns)
-- 🖥️ Clean and professional dark GUI
-- ⚡ Lightweight, fast, and easy to deploy
+- 🎯 Real-time accident detection
+- 💾 Auto-save accident frames in organized folders
+- 📩 Auto-send email alerts with crash images
+- 🔊 Sound alarm on accident detection (Mute/Unmute option)
+- 🎥 Original video playback speed (no artificial slowdown)
+- 🖥️ Clean and modern dark GUI (Responsive and Lightweight)
+- ⚡ Easy setup, lightweight, and customizable
 
 ---
 
-## 🛠 Setup Instructions
+## 📦 Setup Instructions
 
 ### 1. Clone the Repository
 ```bash
 git clone https://github.com/111221007/CrashSenseAI.git
 cd CrashSenseAI
-2. Install Dependencies
-Install all required packages:
+```
 
-bash
-Copy
-Edit
+### 2. Install Dependencies
+```bash
 pip install -r requirements.txt
-requirements.txt includes:
+```
 
-Copy
-Edit
-opencv-python
-numpy
-torch
-ttkbootstrap
-pygame
-Pillow
-ultralytics
-3. Prepare Folders and Files
-Download your trained YOLOv8 model and place it at:
+**requirements.txt** includes:
+- opencv-python
+- numpy
+- torch
+- ttkbootstrap
+- pygame
+- Pillow
+- ultralytics
 
-bash
-Copy
-Edit
+---
+
+### 3. Prepare Required Folders and Files
+✅ Place your trained YOLO model at:
+```
 CrashSenseAI/accident_detection/model/best.pt
-Prepare test videos and put them into:
+```
 
-swift
-Copy
-Edit
+✅ Add your **test videos** inside:
+```
 CrashSenseAI/accident_detection/data/input/test_videos/
-Add an alarm sound file (e.g., alarm.mp3) at:
+```
 
-bash
-Copy
-Edit
+✅ Add an **alarm sound file** (e.g., `alarm.mp3`) here:
+```
 CrashSenseAI/accident_detection/data/alarm.mp3
-4. Configure Email Settings
-Inside email_sender.py, update your email credentials:
+```
 
-python
-Copy
-Edit
+✅ Setup your **email credentials** inside `email_sender.py`:
+```python
 sender_email = "your_email@gmail.com"
 sender_password = "your_app_password"
 receiver_email = "receiver_email@gmail.com"
-⚡ Important: Use an App Password if using Gmail.
-Check How to Generate App Password.
+```
+> ⚡ If using Gmail, you must enable **App Passwords** to use email sending. [Learn how to create App Password →](https://support.google.com/mail/answer/185833?hl=en)
 
-▶️ How to Run CrashSenseAI
-Run the main GUI file:
+---
 
-bash
-Copy
-Edit
-python gui.py
-Select a test video from the list.
+### ▶️ How to Run CrashSenseAI
+1. Launch the GUI:
+   ```bash
+   python gui.py
+   ```
 
-Click Start Detection.
+2. Select a test video from the GUI.
+
+3. Click **Start Detection**.
 
 The system will:
+- Detect crashes in real-time
+- Save crash frames inside:
+  ```
+  accident_detection/data/output/accident_frames/SelectedVideo/
+  ```
+- Play sound alarms when crash detected
+- Send automatic emails with saved crash images attached
+- Allow you to Mute/Unmute alarms anytime from the GUI
 
-Detect accidents in real-time.
+---
 
-Save crash frames automatically inside:
-
-swift
-Copy
-Edit
-accident_detection/data/output/accident_frames/SelectedVideo/
-Play alarm sounds upon accident detection.
-
-Send an email with the saved accident images automatically after detection.
-
-✅ You can Mute/Unmute the sound anytime from the GUI.
-
-📂 Project Structure
-bash
-Copy
-Edit
+## 📂 Project Structure
+```bash
 CrashSenseAI/
 ├── accident_detection/
 │   ├── data/
-│   │   ├── input/test_videos/       # Test videos here
-│   │   ├── output/accident_frames/  # Detected crash images saved here
-│   │   └── alarm.mp3                # Alarm sound file
+│   │   ├── input/test_videos/       # ➡️ Your test videos
+│   │   ├── output/accident_frames/  # ➡️ Saved crash frames
+│   │   └── alarm.mp3                # ➡️ Alarm sound
 │   ├── model/
-│   │   └── best.pt                  # YOLOv8 trained model
+│   │   └── best.pt                  # ➡️ YOLOv8 trained model
 │   ├── scripts/
-│   │   └── gui.py                   # Main GUI application
-│   └── email_sender.py              # Email sending logic
+│   │   └── gui.py                   # ➡️ GUI Application
+│   └── email_sender.py              # ➡️ Email automation
 ├── requirements.txt
 └── README.md
-🎯 Future Work
-🚀 Live webcam / YouTube stream accident detection
-
-📊 Dashboard for monitoring crash incidents
-
-☁️ Cloud-based remote alert system
-
-👨‍💻 Developed By
-[Your Name Here]
-
-⭐ Star this Repository if you find it useful! ⭐
-yaml
-Copy
-Edit
+```
 
 ---
 
-✅ This is in **pure README.md format** and will render perfectly when you upload to GitHub.
+## 🌟 Future Roadmap
+- 🔴 Live webcam & YouTube live stream crash detection
+- 📊 Real-time dashboard monitoring accidents
+- ☁️ Cloud-based remote alert system (IoT Integration)
+- 📈 Performance optimization for embedded devices (Raspberry Pi / Jetson)
 
 ---
 
-Would you like me to also generate:
-- a professional `.gitignore`
-- a ready `LICENSE (MIT License)` file 
-to complete your GitHub project? 🚀  
-(Reply: **yes** if you want!)
+## 👨‍💻 Developed By
+**[Your Name Here]**  
+👉 _Feel free to contribute by creating a pull request!_
 
+---
 
+## 📜 License
+This project is licensed under the **MIT License**.  
+Feel free to use, modify, and share responsibly.
 
+---
 
-
-
+> ⭐ **If you find this project helpful, please consider giving a star on GitHub!** ⭐
