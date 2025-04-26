@@ -1,31 +1,36 @@
-# CrashSenseAI 🚗
+# 🚗 CrashSenseAI
 **Senses Crashes Instantly with AI**
 
 ---
 
 ## 🔥 Overview
-CrashSenseAI is an AI-powered real-time accident detection system that processes videos or streams, detects accidents, alerts with an alarm, and even sends incident images via email instantly.
+CrashSenseAI is a real-time accident detection system using Edge AI models.  
+It detects crashes from videos or streams, raises sound alarms, saves accident frames, and instantly sends email notifications.
 
-Built with:
+**Built with:**
 - YOLOv8 (Ultralytics)
 - OpenCV
 - PyTorch
-- Tkinter + ttkbootstrap (for beautiful GUI)
+- Tkinter + ttkbootstrap (modern dark-themed GUI)
+- Pygame for alarms
+- Automated email sending with attachments
 
 ---
 
 ## 🚀 Features
-- Real-time accident detection
-- Saves incident frames automatically
-- Sends email alerts with images
-- Mute/Unmute sound alarms
-- Clean, modern dark GUI interface
-- Original video playback speed
-- Easy GitHub integration
+- 🎯 Real-time accident detection from videos
+- 💾 Auto-save accident frames to organized folders
+- 📩 Automatic email alerts with attached crash images
+- 🔊 Sound alarm on accident detection (Mute/Unmute support)
+- 🎥 Original video playback speed (no artificial slowdowns)
+- 🖥️ Clean and professional dark GUI
+- ⚡ Lightweight, fast, and easy to deploy
 
 ---
 
 ## 🛠 Setup Instructions
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/111221007/CrashSenseAI.git
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/111221007/CrashSenseAI.git
+cd CrashSenseAI
