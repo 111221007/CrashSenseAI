@@ -14,6 +14,8 @@ from tkinter import Listbox, Canvas, SINGLE, END, messagebox
 from tkinter.ttk import Progressbar
 from PIL import Image, ImageTk
 from ultralytics import YOLO
+from sms_sender import send_accident_sms
+from email_sender import send_accident_email
 
 # ========= CONFIGURATION =========
 MODEL_PATH = Path(r"C:/Users/cmpor/PycharmProjects/EdgeAI_Benchmark_Project/accident_detection/model/best.pt")
@@ -58,8 +60,11 @@ def toggle_mute(mute_button):
     mute_button.config(text="Unmute 🔊" if is_muted else "Mute 🔇", bootstyle=WARNING)
 
 def send_email_async(save_folder):
-    from email_sender import send_accident_email
     threading.Thread(target=lambda: send_accident_email(save_folder), daemon=True).start()
+
+def send_sms_async():
+    """Send an SMS alert asynchronously."""
+    threading.Thread(target=send_accident_sms, daemon=True).start()
 
 # ========= UI HELPERS =========
 def reset_ui(status_label, start_button, accident_label, progress_bar):
@@ -143,7 +148,9 @@ def detect_accidents(video_path, status_label, start_button, accident_label, pro
 
                     if not email_sent:
                         send_email_async(save_path_folder)
+                        send_sms_async()
                         email_sent = True
+
                 accident_streak = 0
 
             color = (0, 0, 255) if detected_accident else (0, 255, 0)

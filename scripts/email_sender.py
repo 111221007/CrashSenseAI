@@ -12,15 +12,23 @@ RECEIVER_EMAIL = "cmporeddy@gmail.com"
 SENDER_PASSWORD = "xdav vhzi jrsn thdn"  # Use App Password for Gmail
 SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 465
+
+subject = "🚨 Accident Detected - CrashSenseAI Alert 🚗"
+body = ("CrashSenseAI system generated email!\n\n"
+        "Attached are the accident photos captured automatically by CrashSenseAI.\n\n"
+        "This is an automated message. No reply is needed.\n\n"
+        "Regards,\nCrashSenseAI Team 🚀")
+
+
 # ====== EMAIL SENDER FUNCTION ======
 def send_accident_email(attachments_folder: Path):
     """Send an email with all accident frame images attached."""
     try:
         message = EmailMessage()
-        message['Subject'] = '🚨 Accident Detected - CrashSenseAI Alert'
+        message['Subject'] = subject
         message['From'] = SENDER_EMAIL
         message['To'] = RECEIVER_EMAIL
-        message.set_content('Attached are the accident frames captured by CrashSenseAI.')
+        message.set_content(body)
 
         # Attach up to 5 images
         images = sorted(attachments_folder.glob("*.jpg"))
