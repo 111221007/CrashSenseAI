@@ -6,10 +6,10 @@ from email.utils import make_msgid
 from pathlib import Path
 
 # ====== CONFIGURATION ======
-SENDER_EMAIL = "andi4work@gmail.com"
+SENDER_EMAIL = "YOUR_MAIL_COMES_HERE@gmail.com"
 RECEIVER_EMAIL = "cmporeddy@gmail.com"
 
-SENDER_PASSWORD = "xdav vhzi jrsn thdn"  # Use App Password for Gmail
+SENDER_PASSWORD = "YOUR PASSWORD COME HERE"  # Use App Password for Gmail (format : xxxx xxxx xxxx xxxx)
 SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 465
 # ====== EMAIL SENDER FUNCTION ======
