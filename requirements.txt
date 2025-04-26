@@ -1,6 +1,7 @@
-ultralytics
 opencv-python
-Pillow
-pygame
-ttkbootstrap
+numpy
 torch
+ttkbootstrap
+pygame
+Pillow
+ultralytics
