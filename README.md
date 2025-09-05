@@ -129,7 +129,7 @@ CrashSenseAI/
 ---
 
 ## 👨‍💻 Developed By
-**[Your Name Here]**  
+**Chandramohan Reddy Poreddy**  
 👉 _Feel free to contribute by creating a pull request!_
 
 ---
